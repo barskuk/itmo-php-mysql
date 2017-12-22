@@ -1,17 +1,19 @@
 <?php
-	// echo "<pre>";
-	// var_dump($_POST);
-	// echo "</pre>";
 
 	$data = $_POST;
-	$preparedData = implode(";", $data);
 	$fileName = $data['date'] . '.txt';
 	$fileFullPath = 'tmpl/' . $fileName;
 	$message = "<h1>Мероприятие добавлено</h1><h2><a href='admin.php'>Добавить еще мероприятие</a></h2>";
 
 	if (file_exists($fileFullPath)) {
-		file_put_contents($fileFullPath, PHP_EOL . $preparedData, FILE_APPEND);
+		$fileData = file_get_contents($fileFullPath, FILE_USE_INCLUDE_PATH);
+		$fileDataArray = json_decode($fileData);
+		array_push($fileDataArray, $data);
+		$preparedData = json_encode($fileDataArray);
+		file_put_contents($fileFullPath, $preparedData);
 	} else {
+		$preparedData = json_encode(array($data));
+		var_dump($preparedData);
 		file_put_contents($fileFullPath, $preparedData);
 	}
 ?>

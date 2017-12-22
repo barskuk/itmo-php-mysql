@@ -9,7 +9,12 @@ $.fn.ajaxPost = function() {
 	console.log(request);
 	 
 	request.done(function( obj ) {
-	  $("#events").html( obj );
+
+		var content = "";
+		for (i = 0; i < obj.length; i++) {
+			content += "<h1>" + obj[i].header + "</h1><p>" + obj[i].description + "</p>";
+		}
+	  $("#events").html(content);
 	});
 	 
 	request.fail(function( jqXHR, textStatus ) {
