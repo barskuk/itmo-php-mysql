@@ -1,6 +1,6 @@
 <?php ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<meta charset="UTF-8">
 	<title>Научный календарь</title>
@@ -11,7 +11,7 @@
 	<div class="container">
 		<h1>Научный календарь</h1>
 		<div class="form-group  form-control-lg">
-			<label>Мероприятия на:</label>
+			<label>Фильтр мероприятий:</label>
 			<?php echo "<input id='calinput' class='form-control col-lg-3' type='date' name='calendar' value='" . date("Y-m-d") . "'>";?>
 		</div>
 		<div id="events"></div>
