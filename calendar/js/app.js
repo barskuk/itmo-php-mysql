@@ -15,7 +15,7 @@ $.fn.ajaxPost = function() {
 		
 		for (i = 0; i < obj.length; i++) {
 			content += "<div class='media'>"
-			content += "<img class='align-self-start mr-3' style='width: 100px;' src='" + "img/" + obj[i].img + "' alt=" + obj[i].header + ">";
+			content += "<img class='align-self-start mr-3' style='width:64px;' src='" + "img/" + obj[i].img + "' alt=" + obj[i].header + ">";
 			content += "<div class='media-body'>";
 			content += "<h5 class='mt-0 mb-1'>" + obj[i].header + "</h5><p>" + obj[i].description + "</p>";
 			content += "</div>";
